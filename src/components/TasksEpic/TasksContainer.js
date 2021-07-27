@@ -42,20 +42,14 @@ const TasksContainer = (props) => {
     }
 
     const onDeleteTask = (id) => {
+        let newTasks = []
         tasks.forEach (
             task => {
-                if (task.id === id) {
-                    function arrayRemove(task, id) { 
-    
-                        return task.filter(function(ele){ 
-                            return ele != id; 
-                        });
-                    }
-                    
-                    setTasks(arrayRemove(task, id));
+                if (task.id !== id) {
+                    newTasks.push(task)
                 }
-            }
-        )
+            });
+        setTasks(newTasks);
     }
 
     return (
