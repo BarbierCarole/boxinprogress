@@ -12,6 +12,7 @@ const TaskForm = ({onAddTask}) => {
         if (title.length >0) {
             onAddTask(title);
             setTitle('');
+            
         }
     };
 
